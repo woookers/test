@@ -1,0 +1,31 @@
+<script>
+
+function Conversion() {
+    var totalPrice = document.getElementById('total').value;
+    noSmart = Math.round( ( (totalPrice*0.05) + Number.EPSILON ) * 100 ) / 100;
+	yesSmart = Math.round( ( (totalPrice*0.1) + Number.EPSILON ) * 100 ) / 100;
+    document.getElementById('nosmart').value= noSmart;
+	document.getElementById('smart').value= yesSmart;
+ }
+
+</script>
+
+
+<body>
+<form class="form" id="form1" method="post">
+  <p class="total"><h2>Total:</h2>
+    <input name="total" type="text" onkeyup="Conversion()" id="total" />
+  </p>
+
+  <hr>
+  <h2>GC:</h2>
+  <p class="nosmart">
+	<h3>No status SMART</h3>
+    <input name="nosmart" type="text" id="nosmart" placeholder="No status SMART" />€
+  </p>
+  <p class="smart">
+  <h3>SMART</h3>
+    <input name="smart" type="text" id="smart" placeholder="SMART" />€
+  </p>
+ </form>
+</body>
